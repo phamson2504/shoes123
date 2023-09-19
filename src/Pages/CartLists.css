@@ -1,0 +1,17 @@
+.table-price img{
+    height: 100px;
+}
+.table-price input{
+    background-color: white;
+    width: 100px;
+}
+.table-price td{
+    vertical-align: middle;
+    text-align: center;
+}
+.table-price th{
+    text-align: center;
+}
+#total-price{
+    height: auto;
+}
