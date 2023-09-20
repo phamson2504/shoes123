@@ -8,9 +8,9 @@ function Nav(props) {
   let cart = props.cart;
   const [cartCount, setCartCount] = useState(0);
   useEffect(()=>{
-    let cartCount = 0
+    let cartCount = 0;
     cart.forEach((item) =>{
-      cartCount += item.qty;
+      cartCount += Number(item.qty);
     });
     setCartCount(cartCount);
   },[cart]);

@@ -13,7 +13,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         (prod) => prod.id === action.payload.id
       );
       const checkItemLimit = state.cart.find(
-        (item) => item.qty === action.payload.item.maxQuantity
+        (item) => item.qty === action.payload.item.maxQuantity && item.id === action.payload.item.id
       );
       console.log(checkItemLimit)
       if (checkItemLimit) {

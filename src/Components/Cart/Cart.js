@@ -7,17 +7,16 @@ function Cart(props) {
     let adjustQuantity = props.adjustQuantity;
     let deleteFromCart = props.deleteFromCart;
 
-    const [qty, setQty] = useState(props.product.qty);
-
-
     const onChangeQuantity = (event) => {
         event.preventDefault();
         let btn = event.currentTarget;
-        setQty(btn.value);
-        adjustQuantity(props.product.id, btn.value);
-        if (btn.value === btn.max) {
-            alert("This is the last quantity for this product");
+        if (Number(btn.value) > btn.max) {
+            alert("Maximum is "+ btn.max +" products");
         }
+        if (Number(btn.value) > btn.max) {
+        btn.value = btn.max;
+        }
+        adjustQuantity(props.product.id, Number(btn.value));
     }
 
     return (
@@ -29,7 +28,7 @@ function Cart(props) {
                 />
             </td>
             <td>{props.product.title}</td>
-            <td>{props.product.newPrice}</td>
+            <td>{props.product.newPrice}$</td>
             <td>
                 <input
                     type="number"
@@ -38,11 +37,11 @@ function Cart(props) {
                     min="1"
                     max={props.product.maxQuantity}
                     step="1"
-                    value={qty}
+                    value={props.product.qty}
                     onChange={onChangeQuantity}
                 ></input>
             </td>
-            <td id="subTotal">{props.product.qty * props.product.newPrice}</td>
+            <td id="subTotal">{props.product.qty * props.product.newPrice}$</td>
             <td>
                 <div variant="dark"
                     size="sm"
