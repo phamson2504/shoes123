@@ -1,4 +1,4 @@
-#Home
+# Home
 ![image](https://github.com/phamson2504/shoes/assets/78399005/36774694-75ff-4ffa-a365-7b52a28772ab)
 You can choose the type of shoe and search for the name of the shoe you want to buy.
 ![image](https://github.com/phamson2504/shoes/assets/78399005/e8e792f6-1879-4ead-ad8a-0ca1008ccba5)
